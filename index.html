@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegance – Premium Ladies Wear</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50">
+
+<!-- TOP BAR -->
+<div class="bg-pink-800 text-white text-center py-2 text-sm">
+  Free Shipping Across India | Easy 7 Days Return | 100% Original Products
+</div>
+
+<!-- HERO SECTION -->
+<header class="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+  <div class="max-w-7xl mx-auto p-12 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Elegance Ladies Wear</h1>
+    <p class="text-lg md:text-xl">Your One Stop Destination for Trendy & Traditional Fashion</p>
+    <button class="mt-6 bg-white text-pink-700 px-8 py-3 rounded-full font-semibold shadow-lg">Explore Collection</button>
+  </div>
+</header>
+
+<!-- FEATURES -->
+<section class="max-w-7xl mx-auto p-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+  <div class="bg-white p-4 rounded shadow">Premium Quality Fabric</div>
+  <div class="bg-white p-4 rounded shadow">Cash on Delivery</div>
+  <div class="bg-white p-4 rounded shadow">Easy Exchange</div>
+  <div class="bg-white p-4 rounded shadow">24x7 Support</div>
+</section>
+
+<!-- CATEGORIES WITH IMAGES -->
+<section class="max-w-7xl mx-auto p-6">
+  <h2 class="text-3xl font-bold mb-6 text-center">Shop by Category</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <img class="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNOkl3bkPQ1uNMn2a1vZB0WpN9eSxwqjXpLw&s" />
+    <img class="rounded" src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f" />
+    <img class="rounded" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990" />
+    <img class="rounded" src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03" />
+  </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section class="max-w-7xl mx-auto p-6">
+  <h2 class="text-3xl font-bold mb-6">New Arrivals</h2>
+  <div id="newContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- TRENDING -->
+<section class="bg-white p-10">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Trending Now</h2>
+    <div id="trendContainer" class="grid grid-cols-1 md:grid-cols-4 gap-6"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="max-w-6xl mx-auto p-10">
+  <h2 class="text-3xl font-bold mb-6 text-center">Customer Love ❤️</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-4 rounded shadow">Amazing quality saree. Totally worth it – Priya</div>
+    <div class="bg-white p-4 rounded shadow">Fast delivery and perfect fitting – Anjali</div>
+    <div class="bg-white p-4 rounded shadow">My favorite shopping site now – Ritu</div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="bg-pink-700 text-white p-10 text-center">
+  <h2 class="text-3xl mb-3">Join Our Fashion Family</h2>
+  <input class="p-2 rounded text-black" placeholder="Enter Email" />
+  <button class="bg-white text-pink-700 px-4 py-2 rounded ml-2">Subscribe</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-pink-900 text-white p-10 grid md:grid-cols-3 gap-6">
+  <div>
+    <h3 class="font-bold mb-2">About</h3>
+    <p>Elegance brings best ladies fashion with trust and style since 2025.</p>
+  </div>
+  <div>
+    <h3 class="font-bold mb-2">Quick Links</h3>
+    <p>Home | Shop | Contact | Policy</p>
+  </div>
+  <div>
+    <h3 class="font-bold mb-2">Contact</h3>
+    <p>Email: support@elegance.com</p>
+  </div>
+</footer>
+
+<script>
+const newProducts = [
+ {name:"Floral Kurti",price:799,img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"},
+ {name:"Designer Saree",price:1899,img:"https://rooprekha.com/cdn/shop/files/1_9.jpg?v=1701969306&width=1445"},
+ {name:"Party Gown",price:1599,img:"https://images.unsplash.com/photo-1595777457583-95e059d581b8"},
+ {name:"Cotton Suit",price:999,img:"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03"},
+ {name:"Lehenga Set",price:2999,img:"https://images.unsplash.com/photo-1618354691373-d851c5c3a990"},
+ {name:"Casual Top",price:599,img:"https://images.unsplash.com/photo-1598554747436-c9293d6a588f"}
+];
+
+function load(id,data){
+ const c=document.getElementById(id);
+ data.forEach(p=>{
+  c.innerHTML+=`<div class='bg-white p-4 rounded shadow hover:scale-105 transition'>
+    <img class='h-60 w-full object-cover rounded' src='${p.img}'/>
+    <h3 class='mt-2 font-semibold'>${p.name}</h3>
+    <p class='text-pink-700 font-bold'>₹${p.price}</p>
+    <button class='bg-pink-600 text-white w-full mt-2 py-2 rounded'>Add to Cart</button>
+  </div>`;
+ });
+}
+
+load('newContainer',newProducts);
+load('trendContainer',newProducts.slice(0,4));
+</script>
+
+</body>
+</html>
